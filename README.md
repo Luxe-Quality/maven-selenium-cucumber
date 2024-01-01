@@ -1,2 +1,1 @@
-# maven-selenium-cucumber
-The Maven Selenium Cucumber template project 
+# cucumber_selenium_maven_java
