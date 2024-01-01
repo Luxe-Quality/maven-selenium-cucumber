@@ -1,5 +1,6 @@
 package com.luxequality.cucumber_selenium_maven_java.helper;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
@@ -19,18 +20,22 @@ public class CommonMethods extends PageInitializer {
     public static WebDriverWait wait;
     public static Logger logger = Logger.getLogger(CommonMethods.class.getName());
     public static Properties properties = new Properties();
+    public static final String baseUrl = System.getProperty("BASE_URL");
 
     public void exe(Scenario scenario) {
         // load a properties file
         try {
-            properties.load(CommonMethods.class.getClassLoader().getResourceAsStream("config.properties"));
+            properties.load(
+                    new FileInputStream(
+                            System.getProperty("user.dir") + "/src/test/java/resources/config.properties"));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
 
         // set up chrome options
         ChromeOptions chromeOptions = new ChromeOptions();
-        // chromeOptions.addArguments("--headless=new");
+        if (Boolean.parseBoolean(properties.getProperty("browser.headless")))
+            chromeOptions.addArguments("--headless=new");
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--window-size=1920,1080");
 
@@ -58,5 +63,4 @@ public class CommonMethods extends PageInitializer {
     public void waitForVisibility(WebElement element) {
         wait.until(d -> element.isDisplayed());
     }
-
 }
