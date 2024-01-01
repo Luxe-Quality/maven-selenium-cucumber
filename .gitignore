@@ -1,4 +1,4 @@
-/.# Compiled class file
+# Compiled class file
 *.class
 
 # Log file
@@ -23,5 +23,8 @@
 hs_err_pid*
 replay_pid*
 
+# Report folder
 target
+
+# VS Code
 .vscode
