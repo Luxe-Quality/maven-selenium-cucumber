@@ -20,4 +20,4 @@ mvn test
 
 # Report
 
-The report is generated in the file `target/surefire-reports/cucumber.html`.
+The report is generated in the file `target/cucumber.html`.
