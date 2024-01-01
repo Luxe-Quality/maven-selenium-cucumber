@@ -1,10 +1,8 @@
 package com.luxequality.cucumber_selenium_maven_java.pages;
 
-import com.luxequality.cucumber_selenium_maven_java.steps.Hooks;
+import com.luxequality.cucumber_selenium_maven_java.helper.CommonMethods;
 
-public class BasePage extends Hooks {
-    public static final String baseUrl = System.getProperty("BASE_URL");
-
+public class BasePage extends CommonMethods {
     /**
      * Open baseUrl
      */
