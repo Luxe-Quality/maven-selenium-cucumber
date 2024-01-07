@@ -35,4 +35,4 @@ jobs:
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_branch: report
-                  publish_dir: target/surefire-reports/cucumberReport
+                  publish_dir: target/cucumberReport
