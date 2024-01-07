@@ -7,9 +7,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/java/resources/features", glue = "com.luxequality.cucumber_selenium_maven_java.steps", plugin = {
-                "pretty",
-                "html:target/cucumber.html",
-                "rerun:target/failed.txt"
+        "pretty",
+        "html:target/cucumberReport/cucumber.html",
+        "rerun:target/failed.txt"
 })
 
 public class Runner {
